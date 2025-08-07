@@ -60,7 +60,7 @@ module OpenAssets
       sorted_outputs = colored_outputs.sort_by { |o|o.script.to_s}
       groups = sorted_outputs.group_by{|o| o.script.to_s}
       result = groups.map{|k, v|
-        btc_address = v[0].script.addresses.first
+        btc_address = v[0].script.to_addr
         sorted_script_outputs = v.sort_by{|o|o.asset_id unless o.asset_id}
         group_assets = sorted_script_outputs.group_by{|o|o.asset_id}.select{|k,v| !k.nil?}
         assets = group_assets.map{|asset_id, outputs|

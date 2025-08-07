@@ -72,7 +72,7 @@ module OpenAssets
       end
 
       def address
-        return @script.addresses.first if @script.p2pkh? || @script.p2sh? || @script.p2wpkh? || @script.p2wsh?
+        return @script.to_addr if @script.p2pkh? || @script.p2sh? || @script.p2wpkh? || @script.p2wsh?
         nil # TODO Bitcoin::Script#to_addr after it enable
       end
 
