@@ -1,4 +1,4 @@
-# openassetsrb [![Gem Version](https://badge.fury.io/rb/openassetsrb.svg)](https://badge.fury.io/rb/openassetsrb) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+# openassetsrb [![Gem Version](https://badge.fury.io/rb/openassets.svg)](https://badge.fury.io/rb/openassets) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 The implementation of the [Open Assets Protocol](https://github.com/OpenAssets/open-assets-protocol) for Ruby.
 
 This library is a fork of [openassets-ruby](https://github.com/haw/openassets-ruby). 
