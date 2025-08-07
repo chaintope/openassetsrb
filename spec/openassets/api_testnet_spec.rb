@@ -27,7 +27,7 @@ describe 'OpenAssets::Api use testnet', :network => :testnet do
         expect(subject[0]['solvable']).to eq(true)
 
         expect(subject[7]['asset_id']).to eq('oNJgtrSSRzsU9k8Gnozy8pARhrwjKRoX5m')
-        expect(subject[7]['proof_of_authenticity']).to eq(true)
+        expect(subject[7]['proof_of_authenticity']).to eq(false) # The certificate has been converted to a DV certificate and no longer includes the organization name.
 
         # P2WPKH
         expect(subject[8]['address']).to eq('tb1qtr8rf2esn3ej2yxu7j0e9qexttskc7p3yluywq')
@@ -58,7 +58,7 @@ describe 'OpenAssets::Api use testnet', :network => :testnet do
         it do
           expect(subject[0]['asset_id']).to eq('oNJgtrSSRzsU9k8Gnozy8pARhrwjKRoX5m')
           expect(subject[0]['quantity']).to eq('777')
-          expect(subject[0]['proof_of_authenticity']).to eq(true)
+          expect(subject[0]['proof_of_authenticity']).to eq(false) # The certificate has been converted to a DV certificate and no longer includes the organization name.
         end
       end
     end

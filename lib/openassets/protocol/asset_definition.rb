@@ -98,7 +98,8 @@ module OpenAssets
         subject = cache.get(asset_definition_url)
         if subject.nil?
           client = HTTPClient.new
-          client.redirect_uri_callback = ->(uri, res) {res.header['location'][0]}
+          client.ssl_config.set_trust_ca(ENV['SSL_CERT_FILE'] || '/etc/ssl/certs/ca-certificates.crt')
+          client.redirect_uri_callback = ->(_, res) { res.header['location'][0] }
           response = client.get(asset_definition_url, :follow_redirect => true)
           cert = response.peer_cert
           unless cert.nil?

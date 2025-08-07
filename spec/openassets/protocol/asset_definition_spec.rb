@@ -51,12 +51,12 @@ describe OpenAssets::Protocol::AssetDefinition do
   it 'proof of authenticity' do
     definition = OpenAssets::Protocol::AssetDefinition.new
     definition.link_to_website = false
-    definition.asset_definition_url = 'http://techmedia-think.hatenablog.com/'
+    definition.asset_definition_url = 'https://techmedia-think.hatenablog.com/'
     expect(definition.proof_of_authenticity).to eq(false)
 
     definition = OpenAssets::Protocol::AssetDefinition.new
     definition.link_to_website = true
-    definition.asset_definition_url = 'http://techmedia-think.hatenablog.com/'
+    definition.asset_definition_url = 'https://techmedia-think.hatenablog.com/'
     expect(definition.proof_of_authenticity).to eq(false)
 
     ssl_site = 'https://goo.gl/6pNP27'
@@ -70,7 +70,8 @@ describe OpenAssets::Protocol::AssetDefinition do
     definition.link_to_website = true
     definition.asset_definition_url = ssl_site
     definition.issuer = 'Amazon.com, Inc.'
-    expect(definition.proof_of_authenticity).to eq(true)
+    # The certificate has been converted to a DV certificate and no longer includes the organization name.
+    expect(definition.proof_of_authenticity).to eq(false)
 
     definition = OpenAssets::Protocol::AssetDefinition.new
     definition.link_to_website = true
