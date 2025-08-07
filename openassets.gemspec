@@ -18,16 +18,15 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.add_runtime_dependency "bitcoinrb", ">= 0.3.2"
-  spec.add_runtime_dependency "ffi", "~>1.9.8"
+  spec.add_runtime_dependency "bitcoinrb", ">= 1.9.1"
   spec.add_runtime_dependency "rest-client", "2.0.2"
   spec.add_runtime_dependency "httpclient"
   spec.add_runtime_dependency "sqlite3"
   spec.add_runtime_dependency "leb128", '~> 1.0.0'
+  spec.add_runtime_dependency "bigdecimal"
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", ">= 12.3.3"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "timecop"
-  spec.add_development_dependency "travis"
 
 end
