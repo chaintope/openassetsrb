@@ -77,7 +77,7 @@ describe OpenAssets::Protocol::AssetDefinition do
     definition.link_to_website = true
     definition.asset_definition_url = ssl_site
     definition.issuer = 'Amazon.com, Inc.'
-    expect(definition.proof_of_authenticity).to eq(true)
+    expect(definition.proof_of_authenticity).to eq(false) # The certificate has been converted to a DV certificate and no longer includes the organization name.
     definition.link_to_website = false
     expect(definition.proof_of_authenticity).to eq(false)
   end
